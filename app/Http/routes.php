@@ -6,12 +6,12 @@ Route::get('/', function () {
 
 Route::get('cervejarias', ['middleware' => 'cors', function()
 {
-    return \Response::json(\App\Brewery::with('beers', 'geocode'), 200);
+    return \Response::json(\App\Brewery::with('beers', 'geocode')->get(), 200);
 }]);
 
 Route::get('breweries', ['middleware' => 'cors', function()
 {
-    return \Response::json(\App\Brewery::with('beers', 'geocode'), 200);
+    return \Response::json(\App\Brewery::with('beers', 'geocode')->get(), 200);
 }]);
 
 Route::get('cervejas', ['middleware' => 'cors', function()
